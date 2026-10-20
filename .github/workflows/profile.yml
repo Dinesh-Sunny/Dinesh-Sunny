@@ -1,0 +1,109 @@
+name: Refresh profile cards
+
+# Generates every stats card inside this repo, so the profile never shows
+# broken images from rate-limited public services.
+# Optional: add a repo secret named PAT (classic token, scopes: repo, read:user)
+# to include private-repo commits and languages in the stats.
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - .github/workflows/profile.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: false
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stats card
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: stats
+          options: username=Dinesh-Sunny&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&card_width=467
+          path: profile/stats.svg
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Top languages card
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: top-langs
+          options: username=Dinesh-Sunny&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&card_width=320
+          path: profile/top-langs.svg
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Pin card - sixthsense
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: pin
+          options: username=Dinesh-Sunny&repo=sixthsense&theme=tokyonight&hide_border=true&description_lines_count=2
+          path: profile/pin-sixthsense.svg
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Pin card - jev-tokensaver
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: pin
+          options: username=Dinesh-Sunny&repo=jev-tokensaver&theme=tokyonight&hide_border=true&description_lines_count=2
+          path: profile/pin-jev-tokensaver.svg
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Pin card - superteams
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: pin
+          options: username=Dinesh-Sunny&repo=superteams&theme=tokyonight&hide_border=true&description_lines_count=2
+          path: profile/pin-superteams.svg
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Pin card - nextjs-agent-starter
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
+        with:
+          card: pin
+          options: username=Dinesh-Sunny&repo=nextjs-agent-starter&theme=tokyonight&hide_border=true&description_lines_count=2
+          path: profile/pin-nextjs-agent-starter.svg
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+      - name: 3D contribution graph
+        uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile profile-3d-contrib
+          git commit -m "chore: refresh profile cards" || exit 0
+          git pull --rebase origin main
+          git push
+
+  activity:
+    needs: cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: jamesgeorge007/github-activity-readme@4aefbfa1c222d70537dc6a02f0519266aab2b1ea # v0.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          GH_USERNAME: Dinesh-Sunny
+          COMMIT_MSG: "chore: refresh recent activity"
+          MAX_LINES: 6
