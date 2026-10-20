@@ -106,4 +106,3 @@ Also on GitHub: **[Claude project starter](https://github.com/Dinesh-Sunny/new-a
 
 <a href="mailto:dineshiitb.ae18@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/footer-dark.svg" /><img src="./assets/footer-light.svg" alt="Building with AI agents? Let's talk. Email dineshiitb.ae18@gmail.com" width="100%" /></picture></a>
 
-<p align="center"><img src="https://komarev.com/ghpvc/?username=Dinesh-Sunny&label=profile%20views&color=636e86&style=flat-square" alt="Profile views" /></p>
