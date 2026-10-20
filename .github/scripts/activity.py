@@ -20,32 +20,32 @@ for e in events:
     if repo.endswith(f"/{USER}"):  # skip the profile repo itself
         continue
     if kind == "PushEvent":
-        key, text = ("push", repo), f"⬆️ Pushed to {link(repo)}"
+        key, text = ("push", repo), f"Pushed to {link(repo)}"
     elif kind == "CreateEvent" and p.get("ref_type") == "repository":
-        key, text = ("create", repo), f"🆕 Created {link(repo)}"
+        key, text = ("create", repo), f"Created {link(repo)}"
     elif kind == "ReleaseEvent":
-        key, text = ("rel", repo), f"🏷️ Released {p['release'].get('tag_name', '')} of {link(repo)}"
+        key, text = ("rel", repo), f"Released {p['release'].get('tag_name', '')} of {link(repo)}"
     elif kind == "PullRequestEvent" and p.get("action") in ("opened", "closed"):
         pr = p["pull_request"]
         verb = "Merged" if pr.get("merged") else ("Opened" if p["action"] == "opened" else "Closed")
-        key, text = ("pr", repo, pr["number"]), f"🔀 {verb} PR [#{pr['number']}]({pr['html_url']}) in {link(repo)}"
+        key, text = ("pr", repo, pr["number"]), f"{verb} PR [#{pr['number']}]({pr['html_url']}) in {link(repo)}"
     elif kind == "IssuesEvent" and p.get("action") in ("opened", "closed"):
         i = p["issue"]
-        key, text = ("is", repo, i["number"]), f"📝 {p['action'].title()} issue [#{i['number']}]({i['html_url']}) in {link(repo)}"
+        key, text = ("is", repo, i["number"]), f"{p['action'].title()} issue [#{i['number']}]({i['html_url']}) in {link(repo)}"
     elif kind == "WatchEvent":
-        key, text = ("star", repo), f"⭐ Starred [{repo}](https://github.com/{repo})"
+        key, text = ("star", repo), f"Starred [{repo}](https://github.com/{repo})"
     elif kind == "ForkEvent":
-        key, text = ("fork", repo), f"🍴 Forked [{repo}](https://github.com/{repo})"
+        key, text = ("fork", repo), f"Forked [{repo}](https://github.com/{repo})"
     else:
         continue
     if key in seen:
         continue
     seen.add(key)
-    lines.append(f"{len(lines) + 1}. {text} <sub>· {day}</sub>")
+    lines.append(f"{len(lines) + 1}. {text} <sub>{day}</sub>")
     if len(lines) >= MAX_LINES:
         break
 
-body = "\n".join(lines) or "_Quiet week - building in private repos._"
+body = "\n".join(lines) or "Quiet week in public - building in private repos."
 readme = open("README.md", encoding="utf-8").read()
 new = re.sub(r"(<!--START_SECTION:activity-->).*?(<!--END_SECTION:activity-->)",
              lambda m: f"{m.group(1)}\n{body}\n{m.group(2)}", readme, flags=re.S)

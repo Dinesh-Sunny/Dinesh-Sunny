@@ -1,0 +1,24 @@
+[
+  {
+    "type": "normal",
+    "fileName": "profile-hark-light.svg",
+    "backgroundColor": "#ffffff",
+    "foregroundColor": "#141414",
+    "strongColor": "#141414",
+    "weakColor": "#5c6273",
+    "radarColor": "#3f6c9f",
+    "growingAnimation": true,
+    "contribColors": ["#efefec", "#c9d4e6", "#8fb0d3", "#3f6c9f", "#1b2c44"]
+  },
+  {
+    "type": "normal",
+    "fileName": "profile-hark-dark.svg",
+    "backgroundColor": "#0d1117",
+    "foregroundColor": "#f3f4f6",
+    "strongColor": "#f3f4f6",
+    "weakColor": "#9aa2b4",
+    "radarColor": "#8fb0d3",
+    "growingAnimation": true,
+    "contribColors": ["#1e1f24", "#2a3550", "#2a4060", "#5a83b5", "#c9d4e6"]
+  }
+]
