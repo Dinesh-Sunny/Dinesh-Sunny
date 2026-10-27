@@ -30,15 +30,15 @@ My favourite part of the job is the bit before the code. I sit with the people w
 <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/section-03-dark.svg" /><img src="./assets/section-03-light.svg" alt="Things I have shipped" width="100%" /></picture>
 
 <p>
+  <a href="https://github.com/Dinesh-Sunny/excalidraw-system-design-kit"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/project-excalidraw-system-design-kit-dark.svg" /><img src="./assets/project-excalidraw-system-design-kit-light.svg" alt="System design kit - 292 searchable Excalidraw blocks for system design and agentic AI" width="49%" /></picture></a>
   <a href="https://github.com/Dinesh-Sunny/sixthsense"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/project-sixthsense-dark.svg" /><img src="./assets/project-sixthsense-light.svg" alt="SixthSense - video agent for London bus safety" width="49%" /></picture></a>
-  <a href="https://github.com/Dinesh-Sunny/jev-tokensaver"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/project-jev-tokensaver-dark.svg" /><img src="./assets/project-jev-tokensaver-light.svg" alt="Jev token saver - cuts AI coding agent token use" width="49%" /></picture></a>
 </p>
 <p>
+  <a href="https://github.com/Dinesh-Sunny/jev-tokensaver"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/project-jev-tokensaver-dark.svg" /><img src="./assets/project-jev-tokensaver-light.svg" alt="Jev token saver - cuts AI coding agent token use" width="49%" /></picture></a>
   <a href="https://github.com/Dinesh-Sunny/superteams"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/project-superteams-dark.svg" /><img src="./assets/project-superteams-light.svg" alt="Superteams - agent workspace for small agencies" width="49%" /></picture></a>
-  <a href="https://github.com/Dinesh-Sunny/nextjs-agent-starter"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/project-nextjs-agent-starter-dark.svg" /><img src="./assets/project-nextjs-agent-starter-light.svg" alt="Agent starter - Next.js 16 template for agent apps" width="49%" /></picture></a>
 </p>
 
-Also on GitHub: **[Claude project starter](https://github.com/Dinesh-Sunny/new-app)** (a repo template with a full Claude Code setup and a self-maintaining AI-context system) and **[Smart Audio Technologies](https://github.com/Dinesh-Sunny/Smart-Audio-Technologies)** (a Next.js business site). More work - agency tooling, trading research, education products - lives in private repos, and I'm happy to walk through it on a call.
+Also on GitHub: **[Agent starter](https://github.com/Dinesh-Sunny/nextjs-agent-starter)** (a Next.js 16 template for agent apps), **[Claude project starter](https://github.com/Dinesh-Sunny/new-app)** (a repo template with a full Claude Code setup and a self-maintaining AI-context system) and **[Smart Audio Technologies](https://github.com/Dinesh-Sunny/Smart-Audio-Technologies)** (a Next.js business site). More work - agency tooling, trading research, education products - lives in private repos, and I'm happy to walk through it on a call.
 <br/>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/section-04-dark.svg" /><img src="./assets/section-04-light.svg" alt="How I ship AI to customers" width="100%" /></picture>
@@ -83,6 +83,7 @@ Also on GitHub: **[Claude project starter](https://github.com/Dinesh-Sunny/new-a
 
 **Right now**
 
+- Maintaining the **[System Design & AI Architecture Kit](https://github.com/Dinesh-Sunny/excalidraw-system-design-kit)** - an open Excalidraw library for system design interviews and agent architectures
 - Building **agentic dev workflows** - teams of AI agents that plan, code, review and ship
 - Exploring **video agents**, **voice AI agents at scale** and **AI filmmaking pipelines**
 - Ask me about putting agents into production, RAG and evals, Next.js and TypeScript, Claude Code and hackathons

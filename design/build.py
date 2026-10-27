@@ -216,6 +216,9 @@ def stack(theme):
 
 
 PROJECTS = [
+    ("excalidraw-system-design-kit", "OPEN SOURCE · EXCALIDRAW LIBRARY", [("System design ", "serif"), ("kit", "serif-i")], "slate",
+     "292 Excalidraw building blocks for system design and agentic AI. Type a name, press Enter, and a labelled block or a full design lands on the board.",
+     "Excalidraw · JavaScript · Playwright"),
     ("sixthsense", "VIDEO AGENT · VAST HACK 2026", [("Sixth", "serif"), ("Sense", "serif-i")], "sky",
      "Every London bus, a second pair of eyes. It predicts what happens next on bus CCTV, grades itself on the next clip and flags near misses.",
      "Python · FastAPI · Next.js · YOLO11"),
